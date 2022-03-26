@@ -4,17 +4,17 @@
 }
 .features-list {
     display: flex;
-    flex-wrap: wrap;
-    width: calc(767px / 2 + 30px);
+    flex-wrap: nowrap;
+    // width: calc(767px / 2 + 30px);
 
     @media screen and (max-width: 480px) {
         flex-wrap: wrap;
     }
-    // @media screen and (min-width: 767px) {
-    //     flex-wrap: wrap;
-    //     width: calc(768px / 2 + 30px);
-    //     margin-bottom: 30px;
-    // }
+    @media screen and (min-width: 767px) {
+        flex-wrap: wrap;
+        width: calc(100% / 2 + 30px);
+        margin-bottom: 30px;
+    }
 }
 
 .features-list__icon {
@@ -54,12 +54,12 @@
         }
     }
 
-    // &:not(:first-child) {
-    //     margin-left: 30px;
-    //     @media screen and (max-width: 480px) {
-    //         margin-left: 0;
-    //     }
-    // }
+    &:not(:first-child) {
+        margin-left: 30px;
+        @media screen and (max-width: 480px) {
+            margin-left: 0;
+        }
+    }
 }
 
 .features-list__name {
