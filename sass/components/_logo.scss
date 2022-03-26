@@ -1,0 +1,10 @@
+.header__logo-first {
+    @extend %color-logo;
+    color: #2196f3;
+}
+
+.logo {
+    @extend %color-logo;
+    color: #000000;
+    text-decoration: none;
+}

@@ -1,0 +1,111 @@
+.header {
+    border-top: 1px #ffffff;
+    border-bottom: 1px solid #ececec;
+}
+.header__logo {
+    padding: 24px 0;
+}
+
+.header__line {
+    display: flex;
+    align-items: center;
+}
+
+.header-list__link {
+    position: relative;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--button-color);
+    text-decoration: none;
+    @extend %transition-color;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        bottom: -1px;
+        left: 0;
+        @extend %transition-bkg;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        background-color: var(--accent-color);
+    }
+}
+.current::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--accent-color);
+}
+
+.header-list__link,
+.header-contacts__link {
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.header-contacts__item:hover {
+    .header__icon {
+        fill: var(--accent-color);
+    }
+}
+
+.header-list {
+    display: flex;
+    .header-list__item + .header-list__item {
+        margin-left: 50px;
+    }
+    .header-list__link.current {
+        color: var(--accent-color);
+    }
+}
+.navigation {
+    margin-left: 93px;
+}
+
+.header-contacts__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.header-contacts {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    .header-contacts__item + .header-contacts__item {
+        margin-left: 30px;
+    }
+}
+.header-contacts__link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+    text-decoration: none;
+    color: #757575;
+}
+
+.header-contacts__mail,
+.header-contacts__tel {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}

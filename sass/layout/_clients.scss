@@ -1,0 +1,41 @@
+.clients__list {
+    display: flex;
+}
+
+.clients__list-name {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--img-title-color);
+    margin-bottom: 50px;
+}
+
+.clients__item {
+    & + & {
+        margin-left: 30px;
+    }
+    &_icon {
+        fill: currentColor;
+    }
+
+    &_link {
+        color: #afb1b8;
+        width: 170px;
+        height: 92px;
+        border: 1px solid #afb1b8;
+        border-radius: 4px;
+        @extend %centering;
+        cursor: pointer;
+        transition-duration: 250ms;
+        transition-property: color, border-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover,
+        &:focus {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+    }
+}

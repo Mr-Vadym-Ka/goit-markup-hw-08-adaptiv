@@ -1,0 +1,196 @@
+.modal-backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms;
+}
+
+.modal-backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-window {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;
+    background: #ffffff;
+    padding: 40px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.modal-window__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title-color);
+    margin-bottom: 12px;
+}
+.modal-window__close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    @extend %centering;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+        outline: none;
+    }
+}
+
+.modal-window__close-icon {
+    fill: currentColor;
+}
+.modal-window__input-icon {
+    position: relative;
+}
+.modal-window__input-title {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-window__input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 11px 12px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 42px;
+    transition-duration: 250ms;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+        border-color: var(--accent-color);
+    }
+    &:hover + .modal-window__line-icon,
+    &:focus + .modal-window__line-icon {
+        fill: var(--accent-color);
+    }
+}
+
+.modal-window__user-text {
+    margin-bottom: 20px;
+}
+
+.modal-window__checkbox {
+    margin-bottom: 30px;
+}
+
+.modal-window__input-line {
+    margin-bottom: 10px;
+}
+
+.modal-window__line-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--img-title-color);
+    color: var(--accent-color);
+    transition-duration: 250ms;
+    transition-property: fill;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+        fill: currentColor;
+    }
+}
+
+.modal-window__check-box {
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--text-color);
+    @extend %centering;
+
+    & span {
+        width: 16px;
+        height: 15px;
+        border: 2px solid var(--border-item-color);
+        border-radius: 3px;
+        @extend %centering;
+        margin-right: 5px;
+        transition-duration: 250ms;
+        transition-property: border-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:focus,
+    &:focus span {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+
+    &-second {
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: var(--accent-color);
+        margin-left: 5px;
+    }
+}
+.modal-window__checkbox-icon {
+    fill: transparent;
+}
+
+.modal-window__check-form {
+    &:checked + .modal-window__check-box > span {
+        background-color: var(--accent-color);
+        border: none;
+    }
+    &:checked + .modal-window__check-box .modal-window__checkbox-icon {
+        fill: var(--hero-btntxt-color);
+    }
+    &:focus + .modal-window__check-box > span,
+    &:hover + .modal-window__check-box > span {
+        border: 3px solid var(--accent-color);
+        border-radius: 4px;
+    }
+}
+
+.modal-window__comment {
+    width: 100%;
+    height: 120px;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    padding: 12px 16px;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    transition-duration: 250ms;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+        border-color: var(--accent-color);
+    }
+}
